@@ -18,4 +18,11 @@ api.post('/notes', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+api.delete('/notes/:id', function (req, res) {
+    saveData
+        .deleteNote(req.params.id)
+        .then(() => res.json({ ok: true}))
+        .catch(err => res.status(500).json(err));
+});
+
 module.exports = api;
