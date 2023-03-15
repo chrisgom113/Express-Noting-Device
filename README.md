@@ -52,28 +52,32 @@ uuid
 - User can click the 'save' icon that appears once title and message have text. Upon saving, user will see note rendered in notes list
 - Upon clicking an existing note, user will find that note's data rendered in the main view
 - Upon clicking the write icon "+", user will find that the main view consists of empty fields for new notes to be entered
+- If user wants to, they can click the "delete" icon next to each saved note to remove the note from the list
 
 ## Landing Page
 
-![Landing Page]()
+![Landing Page](./assets/landing_page.png)
   
 ## Notes Page with Existing Notes 
 
-![Note Page]()
+![Note Page](./assets/Notes_page.gif)
 
 
 ## Enter Notes and Click Save. 
 
-![Saved Note Appears]()
+![Saved Note Appears](./assets/save_note.gif)
 
 ## Clicking Existing Note Renders to Main View
 
-![Existing Note]()
+![Existing Note](./assets/previous_notes.gif)
 
 ## Clicking "+" Allows User to Write New Note
 
-![New Note]()
+![New Note](./assets/New_Note.gif)
 
+## Clicking "delete" Icon Remove Notes from Saved List
+
+![Delete Note](./assets/Delete_note.gif)
  
 # License
 
