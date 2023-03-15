@@ -1,8 +1,9 @@
+//Dependencies
 const api = require('express').Router();
 
 const saveData = require('../db/saveData');
 
-//GET route
+//GET
 api.get('/notes', (req,res) => {
     saveData
     .retrieveNotes()
@@ -10,7 +11,7 @@ api.get('/notes', (req,res) => {
     .catch(err => res.status(500).json(err));
 });
 
-//POST route
+//POST
 api.post('/notes', (req, res) => {
     saveData
     .addNote(req.body)
@@ -18,6 +19,7 @@ api.post('/notes', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+//DELETE
 api.delete('/notes/:id', function (req, res) {
     saveData
         .deleteNote(req.params.id)

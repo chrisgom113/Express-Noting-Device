@@ -1,3 +1,4 @@
+//Dependencies
 const util = require('util');
 const fs = require ('fs');
 const {v4: uuidv4} = require('uuid');
@@ -6,6 +7,7 @@ const readNote = util.promisify(fs.readFile);
 const writeNote = util.promisify(fs.writeFile);
 
 class Save {
+    //Read and Write
     write(note) {
         return writeNote('db/db.json', JSON.stringify(note));
     }
@@ -13,7 +15,7 @@ class Save {
     read() {
         return readNote('db/db.json', 'utf8');
     }
-
+    //Retrieve Notes Function
     retrieveNotes() {
         return this.read().then(notes => {
             let parsedNotes;
@@ -25,7 +27,7 @@ class Save {
             return parsedNotes;
         });
     }
-
+    //Add Note function
     addNote(note) {
         const { title, text } = note;    
         if (!title || !text) {
@@ -39,7 +41,7 @@ class Save {
         .then(updatedNotes => this.write(updatedNotes))
         .then(() => newNote);
     }
-
+    //DELETE function
     deleteNote(id) {
         return this.retrieveNotes()
         .then(notes => notes.filter(note => note.id !== id))
